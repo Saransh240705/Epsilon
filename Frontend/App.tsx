@@ -6,6 +6,7 @@ import BrandComplianceView from "./views/BrandComplianceView";
 import FloatingNav from "./components/FloatingNav";
 import MenuOverlay from "./components/MenuOverlay";
 import HeroScene from "./views/HeroScene";
+import LoginView from "./views/LoginView";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 
 const AppContent: React.FC = () => {
@@ -65,7 +66,8 @@ const AppContent: React.FC = () => {
             <div id="workflow-scene">
               <WorkflowSelector onSelect={setCurrentView} />
             </div>
-          
+          </>
+        );
       case ViewType.COMPARISON:
         return <ComparisonView onNotify={showNotification} />;
       case ViewType.BRAND_COMPLIANCE:
