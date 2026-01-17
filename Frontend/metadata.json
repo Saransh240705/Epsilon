@@ -1,0 +1,8 @@
+{
+  "name": "EPSILON AGY // BRAND AI",
+  "description": "High-performance brand compliance and cinematics for elite digital agencies. Powered by Gemini & Veo.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

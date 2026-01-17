@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPSILON | Brand Agency AI</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#bb0027",
+                        "primary-hover": "#90001e",
+                        "base": "#f2f2f2",
+                        "neutral-black": "#141414",
+                    },
+                    fontFamily: {
+                        "display": ["Bebas Neue", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    animation: {
+                        'reveal-slow': 'revealSlow 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'fade-in-slow': 'fadeInSlow 1.2s ease-in-out forwards',
+                        'pulse-slow': 'pulseSlow 6s ease-in-out infinite',
+                        'drift': 'drift 15s ease-in-out infinite',
+                        'text-slide-up': 'textSlideUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards',
+                        'text-blur-in': 'textBlurIn 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards',
+                    },
+                    keyframes: {
+                        revealSlow: {
+                            '0%': { transform: 'translateY(15px)', opacity: 0 },
+                            '100%': { transform: 'translateY(0)', opacity: 1 },
+                        },
+                        fadeInSlow: {
+                            '0%': { opacity: 0 },
+                            '100%': { opacity: 1 },
+                        },
+                        pulseSlow: {
+                            '0%, 100%': { opacity: 0.05, transform: 'scale(1)' },
+                            '50%': { opacity: 0.12, transform: 'scale(1.05)' },
+                        },
+                        drift: {
+                            '0%, 100%': { transform: 'translate(0, 0)' },
+                            '33%': { transform: 'translate(20px, -15px)' },
+                            '66%': { transform: 'translate(-15px, 30px)' },
+                        },
+                        textSlideUp: {
+                            '0%': { transform: 'translateY(100%)', opacity: 0 },
+                            '100%': { transform: 'translateY(0)', opacity: 1 },
+                        },
+                        textBlurIn: {
+                            '0%': { filter: 'blur(20px)', opacity: 0, transform: 'scale(0.95)' },
+                            '100%': { filter: 'blur(0px)', opacity: 1, transform: 'scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body { 
+            background-color: #f2f2f2;
+            color: #141414;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+        .editorial-title {
+            font-family: 'Bebas Neue', sans-serif;
+            line-height: 0.95;
+            letter-spacing: 0.01em;
+        }
+        .floating-nav {
+            backdrop-filter: blur(20px);
+            background: rgba(20, 20, 20, 0.8);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .scene {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 6rem 4rem;
+        }
+
+        /* Scroll Animation Classes */
+        .reveal-init {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 150ms; }
+        .reveal-delay-2 { transition-delay: 300ms; }
+        .reveal-delay-3 { transition-delay: 450ms; }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f2f2f2;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(187, 0, 39, 0.1);
+            transition: background 0.4s;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #bb0027;
+        }
+        .dark-outline-text {
+            -webkit-text-stroke: 1px rgba(242, 242, 242, 0.1);
+            color: transparent;
+        }
+        * {
+            transition: background-color 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        color 0.6s ease-out, 
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        opacity 0.8s ease;
+        }
+        
+        .title-mask {
+            clip-path: inset(0 0 0 0);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
