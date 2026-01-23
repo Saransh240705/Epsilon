@@ -3,9 +3,9 @@
  * Use this in the frontend instead of direct Gemini calls
  */
 
-// Direct backend URL for all API calls
-const API_BASE = "http://localhost:3001/api";
-const BACKEND_URL = "http://localhost:3001/api";
+// Production backend URL on Render
+const API_BASE = "https://epsilon-1.onrender.com/api";
+const BACKEND_URL = "https://epsilon-1.onrender.com/api";
 
 interface ApiResponse<T> {
   success: boolean;
