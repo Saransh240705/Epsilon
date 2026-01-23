@@ -32,7 +32,8 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const API_BASE = "http://localhost:3001/api";
+// Production backend URL on Render
+const API_BASE = "https://epsilon-1.onrender.com/api";
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
